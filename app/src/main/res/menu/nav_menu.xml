@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home_passage"
+            android:icon="@drawable/home_image"
+            android:title="首页"/>
+
+        <item
+            android:id="@+id/personal_center"
+            android:icon="@drawable/personal_center_image"
+            android:title="个人中心"/>
+
+        <item
+            android:id="@+id/my_asks"
+            android:icon="@drawable/my_asks_image"
+            android:title="我的提问"/>
+
+        <item
+            android:id="@+id/my_answers"
+            android:icon="@drawable/my_answer_image"
+            android:title="我的回答"/>
+
+        <item
+            android:id="@+id/my_settings"
+            android:icon="@drawable/my_settings"
+            android:title="设置"/>
+
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/search"
+            android:title="搜索"/>
+
+    </group>
+
+</menu>

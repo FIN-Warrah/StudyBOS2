@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/live_drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/light_blue"
+        android:fitsSystemWindows="true">
+
+        <FrameLayout
+            android:id="@+id/live_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#6000"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/live_circle_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                app:civ_border_color="#fff"
+                app:civ_border_width="2dp"
+                android:src="@drawable/icon_image"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线课堂"
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/live_chat_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/chat_button_image"/>
+
+            <Button
+                android:id="@+id/live_call_menu_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/live_first_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/live_top_layout"
+            android:background="#4000">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/live_second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/live_first_layout"
+            android:background="#2000"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/live_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#6000">
+
+            <Button
+                android:id="@+id/live_live"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="在线课堂"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:background="#2000"/>
+
+            <Button
+                android:id="@+id/live_help"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="交流空间"
+                android:textSize="24sp"
+                android:textColor="#fff"
+                android:background="@null"/>
+
+            <Button
+                android:id="@+id/live_friends"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="联系人"
+                android:textSize="24sp"
+                android:textColor="#fff"
+                android:background="@null"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/live_second_layout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/live_bottom_layout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/live_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/live_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"></android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

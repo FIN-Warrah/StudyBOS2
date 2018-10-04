@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/live_card_image"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blue"/>
+
+        <TextView
+            android:id="@+id/live_card_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/live_card_image"
+            android:text="高等数学"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/live_card_audience_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/live_card_image"
+            android:layout_alignRight="@id/live_card_image"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="4dp"
+            android:text="0"
+            android:textColor="#fff"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/live_card_image"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@id/live_card_audience_number"
+            android:src="@drawable/audience_number_image"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/live_card_image">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/liver_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/icon_image"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/live_card_liver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Warrah"
+                    android:textSize="18sp"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:id="@+id/live_card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高等数学详解"
+                    android:maxLines="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
