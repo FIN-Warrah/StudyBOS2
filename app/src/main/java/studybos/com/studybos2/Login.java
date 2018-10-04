@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.net.Socket;
+
 public class Login extends AppCompatActivity {
 
     private EditText loginAccountEdit;
@@ -37,6 +40,10 @@ public class Login extends AppCompatActivity {
             );
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+
+
+        Intent intent=new Intent(Login.this,LiveActivity.class);
+        startActivity(intent);
 
         //初始化控件
         loginAccountEdit=(EditText)findViewById(R.id.login_account_edit);

@@ -7,8 +7,6 @@ import android.os.IBinder;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class SocketService extends Service {
     public SocketService() {
@@ -16,7 +14,23 @@ public class SocketService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Socket socket= null;
+
+        ObjectInputStream oIS=null;
+        Object object=null;
+
+        ApplicationUtil applicationUtil=(ApplicationUtil)SocketService.this.getApplication();
+        try {
+            applicationUtil.init();
+            Socket socket=applicationUtil.getSocket();
+            while (true){
+                oIS=applicationUtil.getOIS();
+                object=oIS.readObject();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        /*Socket socket= null;
         ObjectInputStream oIS=null;
         try {
             socket = new Socket("192.168.1.233", 9999);
@@ -29,7 +43,7 @@ public class SocketService extends Service {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
 
         return super.onStartCommand(intent, flags, startId);
     }
