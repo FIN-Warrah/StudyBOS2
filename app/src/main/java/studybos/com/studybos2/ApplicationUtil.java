@@ -1,6 +1,9 @@
 package studybos.com.studybos2;
 
 import android.app.Application;
+
+import org.litepal.LitePalApplication;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,7 +15,7 @@ import java.net.Socket;
  * Created by 机械革命 on 2018/10/4.
  */
 
-public class ApplicationUtil extends Application {
+public class ApplicationUtil extends LitePalApplication {
 
     public static final String ADDRESS = "192.168.1.233";
     public static final int PORT = 9999;

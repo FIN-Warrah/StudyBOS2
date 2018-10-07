@@ -67,7 +67,7 @@ public class FriendsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 /*Toast.makeText(FriendsActivity.this,"clicked"+position,Toast.LENGTH_SHORT).show();*/
-                Intent intent=new Intent(FriendsActivity.this,HelpContent.class);
+                Intent intent=new Intent(FriendsActivity.this,TalkActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0,0);
             }

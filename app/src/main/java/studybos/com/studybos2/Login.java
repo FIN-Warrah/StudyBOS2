@@ -42,8 +42,7 @@ public class Login extends AppCompatActivity {
         }
 
 
-        Intent intent=new Intent(Login.this,LiveActivity.class);
-        startActivity(intent);
+
 
         //初始化控件
         loginAccountEdit=(EditText)findViewById(R.id.login_account_edit);
@@ -89,7 +88,17 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String account=loginAccountEdit.getText().toString();
                 String password=loginPasswordEdit.getText().toString();
-                if (account.equals("admin")&&password.equals("123456")){
+
+                SharedPreferences.Editor editor=getSharedPreferences("loginMessage",MODE_PRIVATE).edit();
+                editor.putString("account","");
+                editor.putString("password","");
+                editor.apply();
+
+                SharedPreferences pref=getSharedPreferences("loginMessage",MODE_PRIVATE);
+                String theAccount=pref.getString("account","");
+                String thePassword=pref.getString("password","");
+
+                if (account!=null&&password!=null){
                     Intent intent=new Intent(Login.this,LiveActivity.class);
                     startActivity(intent);
                 }else{
