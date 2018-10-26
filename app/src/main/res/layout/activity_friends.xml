@@ -55,7 +55,7 @@
 
         </FrameLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/friends_first_layout"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -63,52 +63,12 @@
             android:layout_below="@id/friends_top_layout"
             android:background="#4000">
 
-            <!--<Button
-                android:id="@+id/friends_care_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="关注"
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:background="#1000"/>
-
-            <Button
-                android:id="@+id/friends_fans_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="粉丝"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:background="@null"/>
-
-            <Button
-                android:id="@+id/friends_friends_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="好友"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:background="@null"/>
-
-            <Button
-                android:id="@+id/friends_notknow_button"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="陌生人"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:background="@null"/>-->
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/friends_choose_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:id="@+id/friends_bottom_layout"
@@ -142,7 +102,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="联系人"
+                android:text="消息"
                 android:textSize="24sp"
                 android:textColor="#fff"
                 android:background="#2000"/>
@@ -152,7 +112,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/friends_first_layout"
+            android:layout_below="@id/friends_top_layout"
             android:layout_above="@id/friends_bottom_layout">
 
             <android.support.v7.widget.RecyclerView

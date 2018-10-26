@@ -16,6 +16,8 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.net.Socket;
 
+import studybos.com.studybos2.data.LoginId;
+
 public class Login extends AppCompatActivity {
 
     private EditText loginAccountEdit;
@@ -93,6 +95,7 @@ public class Login extends AppCompatActivity {
                 editor.putString("account","");
                 editor.putString("password","");
                 editor.apply();
+                LoginId.setLoginId(account);
 
                 SharedPreferences pref=getSharedPreferences("loginMessage",MODE_PRIVATE);
                 String theAccount=pref.getString("account","");

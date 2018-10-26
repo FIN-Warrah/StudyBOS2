@@ -25,7 +25,6 @@ public class LiveActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private Button helpButton;
     private Button friendsButton;
-    private Button messageButton;
 
     private LiveCard[] liveCards={new LiveCard("高等数学详解","Warrah","高等数学",8000,R.drawable.blue,R.drawable.icon_image)};
     private List<LiveCard> liveCardList=new ArrayList<>();
@@ -53,7 +52,6 @@ public class LiveActivity extends AppCompatActivity {
         navigationView=(NavigationView)findViewById(R.id.live_nav_view);
         helpButton=(Button)findViewById(R.id.live_help);
         friendsButton=(Button)findViewById(R.id.live_friends);
-        messageButton=(Button)findViewById(R.id.live_chat_button);
 
         //点击按钮呼出菜单栏
         callDrawerButton.setOnClickListener(new View.OnClickListener() {
@@ -91,14 +89,6 @@ public class LiveActivity extends AppCompatActivity {
                 Intent intent=new Intent(LiveActivity.this,FriendsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
-            }
-        });
-        messageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(LiveActivity.this,MessageActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0,0);
             }
         });
 

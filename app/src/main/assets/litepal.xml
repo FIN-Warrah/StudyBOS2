@@ -2,8 +2,16 @@
 <litepal>
     <dbname value="DataBase"></dbname>
 
-    <version value="2"></version>
+    <version value="5"></version>
     <list>
         <mapping class="studybos.com.studybos2.LoginMassage"></mapping>
+        <mapping class="studybos.com.studybos2.data.AnswerInfo2"></mapping>
+        <mapping class="studybos.com.studybos2.data.ChatMessage2"></mapping>
+        <mapping class="studybos.com.studybos2.data.HeadPortraitPack"></mapping>
+        <mapping class="studybos.com.studybos2.data.LiveMessage"></mapping>
+        <mapping class="studybos.com.studybos2.data.LoginInfo"></mapping>
+        <mapping class="studybos.com.studybos2.data.ProblemPack2"></mapping>
+        <mapping class="studybos.com.studybos2.data.RegisterMessage"></mapping>
+        <mapping class="studybos.com.studybos2.data.RequestCode"></mapping>
     </list>
 </litepal>

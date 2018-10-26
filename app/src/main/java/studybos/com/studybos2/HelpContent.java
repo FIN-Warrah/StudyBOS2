@@ -16,11 +16,12 @@ import com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader;
 import java.util.ArrayList;
 import java.util.List;
 
+import studybos.com.studybos2.data.AnswerInfo2;
 import studybos.com.studybos2.util.InitUtil;
 
 public class HelpContent extends AppCompatActivity {
 
-    private List<Help> helpContentList=new ArrayList<>();
+    private List<AnswerInfo2> helpContentList=new ArrayList<>();
     private Button backButton;
 
     @Override
@@ -53,11 +54,18 @@ public class HelpContent extends AppCompatActivity {
         });
 
         //设置recyclerview
-        helpContentList= InitUtil.initHelp(new Help[] {new Help(0)});
+        /*helpContentList= InitUtil.initHelp(new Help[] {new Help(0)});
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.help_content_recycler_view);
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         HelpAdapter adapter=new HelpAdapter(helpContentList);
+        recyclerView.setAdapter(adapter);*/
+
+        helpContentList=InitUtil.initAnswerInfo();
+        RecyclerView recyclerView=(RecyclerView)findViewById(R.id.help_content_recycler_view);
+        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        AnswerAdapter adapter=new AnswerAdapter(helpContentList);
         recyclerView.setAdapter(adapter);
     }
 }

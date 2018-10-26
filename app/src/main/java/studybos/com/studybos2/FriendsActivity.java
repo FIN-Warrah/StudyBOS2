@@ -24,7 +24,7 @@ import studybos.com.studybos2.util.InitUtil;
 
 public class FriendsActivity extends AppCompatActivity {
 
-    private List<Friend> friendList=new ArrayList<>();
+    private List<FriendNew> friendNewList=new ArrayList<>();
     private List<Choose> chooseList=new ArrayList<>();
 
     private DrawerLayout mDrawerLayout;
@@ -58,29 +58,21 @@ public class FriendsActivity extends AppCompatActivity {
 
         //设置recyclerview
         /*initFriends();*/
-        friendList=InitUtil.initFriends(new Friend[] {new Friend(0)});
+        friendNewList=InitUtil.initFriendsNew();
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.friends_recyclerview);
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        FriendAdapter adapter=new FriendAdapter(friendList);
-        adapter.setOnItemClickListener(new FriendAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                /*Toast.makeText(FriendsActivity.this,"clicked"+position,Toast.LENGTH_SHORT).show();*/
-                Intent intent=new Intent(FriendsActivity.this,TalkActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0,0);
-            }
-        });
+        FriendNewAdapter adapter=new FriendNewAdapter(friendNewList);
+
         recyclerView.setAdapter(adapter);
 
-        chooseList=InitUtil.initChooses(new Choose[] {new Choose("关注"),new Choose("粉丝"),new Choose("好友"),new Choose("陌生人")});
+        /*chooseList=InitUtil.initChooses(new Choose[] {new Choose("关注"),new Choose("粉丝"),new Choose("好友"),new Choose("陌生人")});
         RecyclerView recyclerView1=(RecyclerView)findViewById(R.id.friends_choose_recycler_view);
         LinearLayoutManager layoutManager1=new LinearLayoutManager(this);
         layoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView1.setLayoutManager(layoutManager1);
         ChooseAdapter adapter1=new ChooseAdapter(chooseList);
-        recyclerView1.setAdapter(adapter1);
+        recyclerView1.setAdapter(adapter1);*/
 
         //点击按钮呼出菜单栏
         callDrawerButton.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +102,7 @@ public class FriendsActivity extends AppCompatActivity {
         messageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(FriendsActivity.this,MessageActivity.class);
+                Intent intent=new Intent(FriendsActivity.this,SendMessageActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0,0);
             }

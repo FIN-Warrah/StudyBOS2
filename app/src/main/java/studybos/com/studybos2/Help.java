@@ -13,6 +13,7 @@ public class Help {
     private String askerId;
     private String title;
     private String content;
+    private byte[] imgByte;
 
     public Help(int number){
         this.number=number;
@@ -72,5 +73,13 @@ public class Help {
 
     public String getContent() {
         return content;
+    }
+
+    public byte[] getImgByte() {
+        return imgByte;
+    }
+
+    public void setImgByte(byte[] imgByte) {
+        this.imgByte = imgByte;
     }
 }

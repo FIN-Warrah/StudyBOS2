@@ -37,12 +37,12 @@
                 android:layout_gravity="center"/>
 
             <Button
-                android:id="@+id/help_chat"
+                android:id="@+id/help_add_question"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/chat_button_image"/>
+                android:background="@drawable/add_question"/>
 
             <Button
                 android:id="@+id/help_call_menu_button"
@@ -62,6 +62,11 @@
             android:layout_below="@id/help_top_layout"
             android:background="#4000">
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/help_choose_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +75,9 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@id/help_first_layout"
-            android:background="#2000"></LinearLayout>
+            android:background="#2000">
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/help_bottom_layout"
@@ -104,7 +111,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="联系人"
+                android:text="消息"
                 android:textSize="24sp"
                 android:textColor="#fff"
                 android:background="@null"/>

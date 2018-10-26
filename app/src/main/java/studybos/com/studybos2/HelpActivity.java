@@ -19,18 +19,20 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import studybos.com.studybos2.data.ProblemNumber;
 import studybos.com.studybos2.util.InitUtil;
 
 public class HelpActivity extends AppCompatActivity {
 
     private List<Help> helpList=new ArrayList<>();
+    private List<Choose> chooseHelpList=new ArrayList<>();
 
     private DrawerLayout mDrawerLayout;
     private Button callDrawerButton;
     private NavigationView navigationView;
     private Button liveButton;
     private Button friendsButton;
-    private Button messageButton;
+    private Button addQuestionbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +53,16 @@ public class HelpActivity extends AppCompatActivity {
         navigationView=(NavigationView)findViewById(R.id.help_nav_view);
         liveButton=(Button)findViewById(R.id.help_live);
         friendsButton=(Button)findViewById(R.id.help_friends);
-        messageButton=(Button)findViewById(R.id.help_chat);
+        addQuestionbutton=(Button)findViewById(R.id.help_add_question);
 
+        //设置recyclerview
+        chooseHelpList=InitUtil.initChooses(new Choose[] {new Choose("全部"),new Choose("哲学"),new Choose(" 经济学 "),new Choose("法学"),new Choose("文学"),new Choose(" 历史学 "),new Choose("理学"),new Choose("工学"),new Choose("医学"),new Choose(" 管理学 "),new Choose(" 艺术学 ")});
+        RecyclerView recyclerView1=(RecyclerView)findViewById(R.id.help_choose_recycler_view);
+        LinearLayoutManager layoutManager1=new LinearLayoutManager(this);
+        layoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView1.setLayoutManager(layoutManager1);
+        ChooseAdapter adapter1=new ChooseAdapter(chooseHelpList);
+        recyclerView1.setAdapter(adapter1);
 
         //点击按钮呼出菜单栏
         callDrawerButton.setOnClickListener(new View.OnClickListener() {
@@ -79,10 +89,10 @@ public class HelpActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
         });
-        messageButton.setOnClickListener(new View.OnClickListener() {
+        addQuestionbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HelpActivity.this,MessageActivity.class);
+                Intent intent=new Intent(HelpActivity.this,AddQuestion.class);
                 startActivity(intent);
                 overridePendingTransition(0,0);
             }
@@ -124,7 +134,9 @@ public class HelpActivity extends AppCompatActivity {
 
         //设置recyclerview
         /*initHelp();*/
-        helpList=InitUtil.initHelp(new Help[] {new Help(0)});
+        /*helpList=InitUtil.initHelp(new Help[] {new Help(0)});*/
+        helpList=InitUtil.initReadHelp();
+        /*HelpList.setHelpList(helpList);*/
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.help_recycler_view);
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -134,6 +146,7 @@ public class HelpActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new HelpAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+                ProblemNumber.setProblemNumber(position);
                 Toast.makeText(HelpActivity.this,"clicked"+position,Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(HelpActivity.this,HelpContent.class);
                 startActivity(intent);

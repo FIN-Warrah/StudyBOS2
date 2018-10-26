@@ -40,14 +40,6 @@
                 android:layout_gravity="center"/>
 
             <Button
-                android:id="@+id/live_chat_button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/chat_button_image"/>
-
-            <Button
                 android:id="@+id/live_call_menu_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -107,7 +99,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="联系人"
+                android:text="消息"
                 android:textSize="24sp"
                 android:textColor="#fff"
                 android:background="@null"/>

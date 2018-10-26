@@ -1,6 +1,7 @@
 package studybos.com.studybos2;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.List;
+
+import studybos.com.studybos2.data.Subject;
 
 /**
  * Created by 机械革命 on 2018/8/26.
@@ -45,6 +48,7 @@ public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ViewHolder
             public void onClick(View v) {
                 int position=holder.getAdapterPosition();
                 Choose choose=mChooseList.get(position);
+                Subject.setSubject(choose.getChoose());
                 Toast.makeText(v.getContext(),choose.getChoose(),Toast.LENGTH_SHORT).show();
             }
         });

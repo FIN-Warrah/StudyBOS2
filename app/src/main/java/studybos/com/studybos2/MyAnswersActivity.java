@@ -47,7 +47,7 @@ public class MyAnswersActivity extends AppCompatActivity {
         });
 
         //设置recyclerview
-        helpList= InitUtil.initHelp(new Help[] {new Help(0)});
+        helpList= InitUtil.initMyAnswers();
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.my_answers_recycler_view);
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

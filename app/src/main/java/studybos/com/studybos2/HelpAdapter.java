@@ -1,5 +1,6 @@
 package studybos.com.studybos2;
 
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,11 +69,14 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Help help=mHelpList.get(position);
-        holder.askerImage.setImageResource(help.getAskerImageId());
+        /*holder.askerImage.setImageResource(help.getAskerImageId());*/
+        /*byte[] b=help.getImgByte();
+        int length=b.length;
+        holder.image.setImageBitmap(BitmapFactory.decodeByteArray(b,0,length));*/
         holder.askerId.setText(help.getAskerId());
         holder.title.setText(help.getTitle());
         holder.content.setText(help.getContent());
-        holder.image.setImageResource(help.getImageId());
+        /*holder.image.setImageResource(help.getImageId());*/
 
         if(mOnItemClickListener != null){
             //为ItemView设置监听器

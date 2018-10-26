@@ -13,12 +13,13 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import studybos.com.studybos2.data.ChatMessage2;
 import studybos.com.studybos2.util.InitUtil;
 
 public class MessageActivity extends AppCompatActivity {
 
     private Button backButton;
-    private List<Friend> friendList=new ArrayList<>();
+    private List<ChatMessage2> chatMessage2List=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +48,11 @@ public class MessageActivity extends AppCompatActivity {
         });
 
         //设置recyclerview
-        friendList= InitUtil.initFriends(new Friend[] {new Friend(0)});
+        chatMessage2List= InitUtil.initChatMessage();
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.message_recycler_view);
         LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        FriendAdapter adapter=new FriendAdapter(friendList);
+        ChatMessageAdapter adapter=new ChatMessageAdapter(chatMessage2List);
         recyclerView.setAdapter(adapter);
     }
 }
