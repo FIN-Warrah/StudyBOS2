@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
 
     android:fitsSystemWindows="true"
     android:background="@drawable/light_blue">
@@ -56,9 +63,14 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/camera_button"/>
 
-
-
-
+        <Spinner
+            android:id="@+id/choosePro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/project"
+            android:layout_toLeftOf="@id/add_question_take_photo_button"
+            android:layout_toRightOf="@id/choose_pro_text"
+            android:layout_marginTop="10dp"/>
 
     </RelativeLayout>
 
@@ -98,3 +110,4 @@
         android:background="@drawable/button_shape"/>
 
 </LinearLayout>
+</ScrollView>

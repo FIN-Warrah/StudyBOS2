@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.Calendar;
 
+import studybos.com.studybos2.data.ChatMessage;
 import studybos.com.studybos2.data.ChatMessage2;
 import studybos.com.studybos2.data.LoginId;
 
@@ -58,7 +59,7 @@ public class SendMessageActivity extends AppCompatActivity {
 
                 //发送到服务器
                 try {
-                    ChatMessage2 chatMessage2 =new ChatMessage2();
+                    ChatMessage chatMessage2 =new ChatMessage();
                     chatMessage2.setSender(LoginId.getLoginId());
                     chatMessage2.setGetter(id.getText().toString());
                     chatMessage2.setMess(message.getText().toString());

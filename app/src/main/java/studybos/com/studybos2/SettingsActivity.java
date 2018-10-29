@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.litepal.LitePal;
+
 public class SettingsActivity extends AppCompatActivity {
 
     private Button logoutButton;
